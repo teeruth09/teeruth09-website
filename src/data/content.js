@@ -4,7 +4,8 @@ export const USER_INFO = {
   bio: "A passionate fourth-year Computer Engineering student at KMITL with strong interests in full-stack development, DevOps, and software engineering.",
   email: "teeruth2546@gmail.com",
   github: "https://github.com/teeruth09",
-  linkedin: "https://www.linkedin.com/in/teeruth-ieowsakulrat/"
+  linkedin: "https://www.linkedin.com/in/teeruth-ieowsakulrat/",
+  aboutDetail: "My name is Teeruth Ieowsakulrat. Most people call me Ruth. I am currently studying Computer Engineering at King Mongkut's Institute of Technology Ladkrabang (KMITL). I have a strong interest in web application development, with a focus on full-stack development, DevOps, and software engineering. In my free time, I enjoy watching series and YouTube, playing badminton, and improving my skills by working on personal projects or freelance work. Throughout my academic journey, I have gained solid knowledge in software, hardware, and networking under the guidance of experienced professors. I have applied this knowledge through hands-on projects and laboratory exercises, allowing me to continuously improve and strengthen my technical skills.",
 };
 
 export const SKILLS = [

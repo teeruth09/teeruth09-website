@@ -20,13 +20,14 @@ export function ProjectOverview() {
 
       {/* Screenshot */}
       <div className="flex justify-center">
-        <Image
+        <ProjectOverviewImages/>
+        {/* <Image
           src="/projects/stockDividend/overview.png"
           alt="Stock Dividend Web Application Overview"
           width={900}
           height={500}
           className="rounded-xl shadow-md border"
-        />
+        /> */}
       </div>
     </section>
   );
@@ -35,8 +36,8 @@ export function ProjectOverview() {
 function ProjectOverviewImages() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-      <Image src="/projects/overview/stockHomePage.png" alt="HomePage" width={600} height={400} className="rounded-xl" />
-      <Image src="/projects/overview/stockAnalysis.png" alt="Stock Analysis" width={600} height={400} className="rounded-xl" />
+      <Image src="/projects/stockDividend/overview/stockHomePage.png" alt="HomePage" width={600} height={400}  />
+      <Image src="/projects/stockDividend/overview/stockAnalysis.png" alt="Stock Analysis" width={600} height={400}  />
     </div>
   );
 }

@@ -165,16 +165,51 @@ export const PROJECTS = [
 export const ACTIVITIES = [
   {
     id: 1,
-    title: "Hackathon 2023",
-    date: "10 Dec 2023",
-    description: "เข้าร่วมแข่งขัน Hackathon ในหัวข้อ Innovation for Future ได้รับรางวัลรองชนะเลิศอันดับ 2",
-    image: "/api/placeholder/600/400" // เปลี่ยนเป็น "/activity/hackathon.jpg"
+    title: "PRE ENGINEERING 2023",
+    date: "June 10-12, 2023",
+    description:
+      "PRE ENGINEERING 2023 was a camp for first-year students in the Faculty of Engineering at KMITL. I was a staff member responsible for managing and handling participant data.",
+    images: [
+      "/activity/preengineering/preeng_1.png",
+      "/activity/preengineering/preeng_2.png",
+      "/activity/preengineering/preeng_3.png",
+    ],
   },
   {
     id: 2,
-    title: "React Workshop Speaker",
-    date: "15 Aug 2023",
-    description: "เป็นวิทยากรบรรยายพื้นฐาน React ให้กับน้องๆ นักศึกษาปี 1 ที่มหาวิทยาลัย",
-    image: "/api/placeholder/600/400" // เปลี่ยนเป็น "/activity/workshop.jpg"
-  }
+    title: "CE BOOSTUP XI",
+    date: "June 16-19, 2023",
+    description:
+      "CE BOOSTUP XI was a foundational camp for first-year students in Computer Engineering at KMITL. I served as the head of the data management team, overseeing student information and coordination.",
+    images: [
+      "/activity/ce_boostup/ce_boostup_1.png",
+      "/activity/ce_boostup/ce_boostup_2.png",
+      "/activity/ce_boostup/ce_boostup_3.png",
+    ],
+  },
+  {
+    id: 3,
+    title: "PRE Robot",
+    date: "July 22-23, 2023",
+    description:
+      "PRE Robot was an introductory robotics camp for freshmen organized by the KMITL Robot Club. I worked as a staff member, supporting students during programming workshop sessions.",
+    images: [
+      "/activity/prerobot/prerobot_1.png",
+      "/activity/prerobot/prerobot_2.png",
+    ],
+  },
+  {
+    id: 4,
+    title: "GEARLEAGUE",
+    date: "April 20-21, 2024",
+    description:
+      "Gear League was a sports competition designed to strengthen relationships among engineering students from leading universities across Thailand. I represented my university as a men's doubles badminton player in the tournament.",
+    images: [
+      "/activity/gearleague/gearleague_1.png",
+      "/activity/gearleague/gearleague_2.png",
+      "/activity/gearleague/gearleague_3.png",
+      "/activity/gearleague/gearleague_4.png",
+    ],
+  },
+  
 ];

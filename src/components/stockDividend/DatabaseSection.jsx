@@ -5,7 +5,7 @@ export function DatabaseSection() {
     <section className="space-y-12">
       {/* Header */}
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold">ER Diagram</h2>
+        <h1 className="text-2xl font-bold">ER Diagram</h1>
         <p className="text-gray-600">
           The database schema is organized into four logical table groups,
           each designed to separate responsibilities and improve maintainability,

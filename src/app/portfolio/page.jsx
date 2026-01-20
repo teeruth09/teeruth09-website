@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { EXPERIENCES, PROJECTS } from '@/data/content';
 import Image from 'next/image';
-import { PortfolioSection } from '@/components/PortfolioSection';
+import { PortfolioSection } from '@/components/portfolio/PortfolioSection';
 
 export default function PortfolioPage() {
   return (

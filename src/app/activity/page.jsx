@@ -2,42 +2,12 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 import { ACTIVITIES } from '@/data/content'; // ดึงข้อมูลจากไฟล์ data
+import { ActivitySection } from '@/components/activity/ActivitySection';
 
 export default function ActivityPage() {
   return (
-    <div className="min-h-screen pt-24 pb-12 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">กิจกรรม & ผลงานอื่นๆ</h2>
-          <p className="text-gray-500 text-lg">กิจกรรมที่เข้าร่วม การแข่งขัน และงานอาสาสมัคร</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {ACTIVITIES.map((activity) => (
-            <div key={activity.id} className="flex flex-col rounded-2xl overflow-hidden border border-gray-100 shadow-lg group hover:shadow-xl transition-all duration-300">
-              <div className="h-64 overflow-hidden relative bg-gray-100">
-                {/* ถ้ายังไม่มีรูปจริง สามารถใช้ path รูปจาก public folder ได้เลย */}
-                <img 
-                  src={activity.image} 
-                  alt={activity.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-gray-800 shadow-sm flex items-center">
-                  <Calendar size={14} className="mr-2 text-blue-600"/> {activity.date}
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {activity.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {activity.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16">
+      <ActivitySection/>
     </div>
   );
 }

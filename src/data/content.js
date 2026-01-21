@@ -147,7 +147,7 @@ export const PROJECTS = [
     image: "/projects/stockDividend.png",
     role: "Full Stack Developer",
     tech: ["Next.js", "NestJS", "Machine Learning","Dividend Tax","Software Development"],
-    liveUrl: "https://www.canva.com/design/DAGVByJXRGI/Q8jrP6qLW57ftW5K7n8thw/edit",
+    liveUrl: "https://www.canva.com/design/DAG_EcHz220/PX2v7DnC241IAmsFKr_urw/view?utm_content=DAG_EcHz220&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h095d6fcb2d",
     githubUrl: "https://github.com/teeruth09/YevOps",
     githubUrls: [
       {

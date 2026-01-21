@@ -24,8 +24,6 @@ export default function StockDividendPage() {
 
       <YevOpsDatabaseSection />
 
-      {/* <EngineeringDecisions /> */}
-
       <YevOpsProjectLinks />
 
     </div>

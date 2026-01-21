@@ -7,7 +7,7 @@ export function YevOpsDatabaseSection() {
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">ER Diagram</h1>
         <p className="text-gray-600">
-          The database schema is organized into four logical table groups,
+          The database schema is organized into five logical table groups,
           each designed to separate responsibilities and improve maintainability,
           scalability, and clarity of data relationships.
         </p>
@@ -24,140 +24,179 @@ export function YevOpsDatabaseSection() {
         />
       </div>
 
-      {/* Core Entities */}
+      {/* Core User & Identity Entities */}
       <section className="space-y-4">
-        <h3 className="text-2xl font-semibold">Core Entities</h3>
+        <h3 className="text-2xl font-semibold">Core User & Identity Entities</h3>
         <p className="text-gray-600">
-          This group contains the fundamental entities that serve as the backbone of the system.
+          This group defines the primary user roles and identity-related data within the system.
+          These entities act as the foundation for authentication, authorization, and ownership of system resources.
         </p>
 
         <ul className="list-disc pl-6 space-y-3 text-gray-700">
           <li>
-            <strong>Stock</strong>
+            <strong>Client</strong>
             <br />
-            Stores master data of listed stocks, including sector information and corporate tax attributes.
-            This table acts as a central reference for all market data, transactions, and predictions.
+            Represents customers who use the platform to search for tailoring shops, place orders,
+            manage personal profiles, favorite shops, and store body measurements for tailoring.
           </li>
+
+          <li>
+            <strong>Shop</strong>
+            <br />
+            Represents tailoring shops that offer tailoring services, manage orders,
+            define service packages, and interact with customers.
+          </li>
+
           <li>
             <strong>User</strong>
             <br />
-            Represents system users and serves as the ownership anchor for portfolios,
-            transactions, dividend income, and tax-related records.
+            A generic authentication entity used for system-level access control and credential management.
           </li>
         </ul>
 
         <p className="text-gray-600">
-          These entities provide stable reference data that is shared across all system domains.
+          These entities are responsible for user authentication, role separation, and ownership mapping
+          across all functional domains.
         </p>
       </section>
 
-      {/* Market Data */}
+      {/* Profile & Personal Information */}
       <section className="space-y-4">
-        <h3 className="text-2xl font-semibold">Market Data</h3>
+        <h3 className="text-2xl font-semibold">Profile & Personal Information</h3>
         <p className="text-gray-600">
-          This group manages historical, event-based, and predictive stock market information.
+          This group contains user-specific profile and personal information
+          that supports customization and identity verification.
         </p>
 
         <ul className="list-disc pl-6 space-y-3 text-gray-700">
           <li>
-            <strong>HistoricalPrice</strong>
+            <strong>ClientSize</strong>
             <br />
-            Stores daily stock price data using a composite key of stock symbol and trading date,
-            enabling efficient time-series analysis.
+            Stores detailed body measurements of customers,
+            enabling accurate and personalized tailoring services.
           </li>
+
           <li>
-            <strong>Dividend</strong>
+            <strong>BankAccount</strong>
             <br />
-            Records dividend announcements, including XD date, record date, and payment date,
-            which are critical for dividend-based investment strategies.
-          </li>
-          <li>
-            <strong>Prediction</strong>
-            <br />
-            Stores machine learning–generated forecasts related to dividend events and payment schedules,
-            allowing the system to integrate predictive analytics with real market data.
+            Stores bank account and financial information for users,
+            supporting payments, refunds, and financial transactions.
           </li>
         </ul>
 
         <p className="text-gray-600">
-          This separation allows market data and ML outputs to evolve independently from user activity data.
+          These entities enhance personalization and enable secure financial operations.
         </p>
       </section>
 
-      {/* User Transactions */}
-      <section className="space-y-4">
-        <h3 className="text-2xl font-semibold">User Transactions</h3>
-        <p className="text-gray-600">
-          This group captures all user-level investment activities and their financial outcomes.
-        </p>
+    {/* Order & Transaction Management */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Order & Transaction Management</h3>
+      <p className="text-gray-600">
+        This group manages the complete lifecycle of tailoring orders,
+        from customer requests to order completion.
+      </p>
 
-        <ul className="list-disc pl-6 space-y-3 text-gray-700">
-          <li>
-            <strong>Transaction</strong>
-            <br />
-            Records individual buy and sell operations performed by users.
-          </li>
-          <li>
-            <strong>Portfolio</strong>
-            <br />
-            Maintains the current holdings of each user per stock,
-            acting as a derived snapshot based on transaction history.
-          </li>
-          <li>
-            <strong>DividendReceived</strong>
-            <br />
-            Represents actual dividend income received by users,
-            linking dividend events with user holdings on the record date.
-          </li>
-        </ul>
+      <ul className="list-disc pl-6 space-y-3 text-gray-700">
+        <li>
+          <strong>Order</strong>
+          <br />
+          Represents tailoring orders placed by customers,
+          including order status, pricing, payment details, deadlines, and delivery states.
+        </li>
 
-        <p className="text-gray-600">
-          This design clearly distinguishes between transactional events
-          and aggregated investment states.
-        </p>
-      </section>
+        <li>
+          <strong>OrderType</strong>
+          <br />
+          Defines tailoring service packages offered by shops,
+          including pricing, details, and expected completion time.
+        </li>
 
-      {/* Tax Management */}
-      <section className="space-y-4">
-        <h3 className="text-2xl font-semibold">Tax Management</h3>
-        <p className="text-gray-600">
-          This group handles tax computation and optimization related to dividend income.
-        </p>
+        <li>
+          <strong>ShopReplyDescription</strong>
+          <br />
+          Stores shop responses to customer requests,
+          such as confirmed price and delivery deadline.
+        </li>
 
-        <ul className="list-disc pl-6 space-y-3 text-gray-700">
-          <li>
-            <strong>UserTaxInfo</strong>
-            <br />
-            Stores personal income and deduction data for each user by tax year,
-            enabling accurate tax calculations.
-          </li>
-          <li>
-            <strong>TaxCredit</strong>
-            <br />
-            Represents dividend tax credits derived from received dividends,
-            supporting tax-saving analysis and credit utilization tracking.
-          </li>
-        </ul>
+        <li>
+          <strong>UserRequestDescription</strong>
+          <br />
+          Captures customer requirements for tailoring,
+          including budget, deadline, clothing type, and reference images.
+        </li>
+      </ul>
 
-        <p className="text-gray-600">
-          By isolating tax-related data, the system ensures auditability
-          and flexibility for future changes in tax regulations.
-        </p>
-      </section>
+      <p className="text-gray-600">
+        These entities collectively support order negotiation, payment flow,
+        and status tracking throughout the tailoring process.
+      </p>
+    </section>
 
-      {/* Summary */}
-      <section className="space-y-3">
-        <h3 className="text-2xl font-semibold">Summary</h3>
-        <p className="text-gray-600">
-          Overall, the database design follows a domain-driven approach that
-          cleanly separates core entities, market data, user activities,
-          and tax management.
-        </p>
-        <p className="text-gray-600">
-          This structure supports accurate financial analysis, scalable data processing,
-          and seamless integration with backend services and machine learning components.
-        </p>
-      </section>
+    {/* Content & Interaction */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Content & Interaction</h3>
+      <p className="text-gray-600">
+        This group supports social interaction and communication
+        between customers and tailoring shops.
+      </p>
+
+      <ul className="list-disc pl-6 space-y-3 text-gray-700">
+        <li>
+          <strong>Post</strong>
+          <br />
+          Allows customers to publish tailoring requests publicly,
+          enabling shops to browse and respond to customer needs.
+        </li>
+
+        <li>
+          <strong>Review</strong>
+          <br />
+          Stores customer feedback and ratings for tailoring shops,
+          supporting trust and service quality evaluation.
+        </li>
+
+        <li>
+          <strong>Report</strong>
+          <br />
+          Enables customers to report shops for inappropriate behavior or service issues.
+        </li>
+      </ul>
+
+      <p className="text-gray-600">
+        These entities enhance transparency, trust, and engagement within the platform.
+      </p>
+    </section>
+
+    {/* Verification & Compliance */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Verification & Compliance</h3>
+      <p className="text-gray-600">
+        This group handles identity verification and compliance requirements
+        to ensure platform reliability and trustworthiness.
+      </p>
+
+      <ul className="list-disc pl-6 space-y-3 text-gray-700">
+        <li>
+          <strong>VerifyRequest</strong>
+          <br />
+          Stores verification requests submitted by tailoring shops,
+          including owner identity, business address, and product details.
+        </li>
+
+        <li>
+          <strong>ShopDetail</strong>
+          <br />
+          Stores extended descriptive information about tailoring shops,
+          including location and contact details.
+        </li>
+      </ul>
+
+      <p className="text-gray-600">
+        These entities support shop verification workflows and platform governance.
+      </p>
+    </section>
+
     </section>
   );
 }

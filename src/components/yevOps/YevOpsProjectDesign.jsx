@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FunctionalRequirements } from "./requirement/YevOpsFunctionalRequirement";
+import { NonFunctionalRequirements } from "./requirement/YevOpsNonFunctionalRequirement";
+import UserStories from "./userStories/YevOpsUserStory";
 
 export function YevOpsProjectDesign() {
   return (
@@ -7,8 +10,13 @@ export function YevOpsProjectDesign() {
             YevOps Project Design
         </h2>
 
-        <FunctionalRequirements />
+        <div className="mb-5">
+          <FunctionalRequirements />
+        </div>
 
+        <div className="mb-5">
+          <NonFunctionalRequirements /> 
+        </div>
 
         <UserStories />
 
@@ -16,63 +24,6 @@ export function YevOpsProjectDesign() {
   );
 }
 
-function FunctionalRequirements() {
-  return (
-    <section className="space-y-4">
-      <h3 className="text-xl font-semibold">
-        Functional Requirements (MoSCoW)
-      </h3>
-
-      <p className="text-gray-700">
-        The following table summarizes the functional requirements of YevOps,
-        categorized using the MoSCoW prioritization technique.
-      </p>
-
-      {/* MUST */}
-      <div>
-        <h4 className="font-semibold text-green-700 mb-2">Must Have</h4>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>User registration</li>
-          <li>Login / Logout system</li>
-          <li>Search and view tailoring shops</li>
-          <li>Place tailoring orders</li>
-          <li>Payment system</li>
-          <li>Profile view and edit</li>
-          <li>Order acceptance or rejection upon completion</li>
-          <li>Forgot password recovery</li>
-        </ul>
-      </div>
-
-      {/* SHOULD */}
-      <div>
-        <h4 className="font-semibold text-blue-700 mb-2">Should Have</h4>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Verified tailoring shop filtering</li>
-          <li>Order status tracking</li>
-          <li>Coupon and discount system</li>
-          <li>Search tailoring shops by location</li>
-        </ul>
-      </div>
-
-      {/* COULD */}
-      <div>
-        <h4 className="font-semibold text-yellow-700 mb-2">Could Have</h4>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Real-time chat between customers and tailoring shops</li>
-          <li>View other users’ public profiles</li>
-        </ul>
-      </div>
-
-      {/* WON'T */}
-      <div>
-        <h4 className="font-semibold text-red-700 mb-2">Won’t Have</h4>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Username modification after registration</li>
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 
 function ProjectRequirements() {
@@ -115,53 +66,53 @@ function ProjectRequirements() {
   );
 }
 
-function UserStories() {
-  return (
-    <section className="space-y-4">
-      <h3 className="text-xl font-semibold">
-        User Stories
-      </h3>
+// function UserStories() {
+//   return (
+//     <section className="space-y-4">
+//       <h3 className="text-xl font-semibold">
+//         User Stories
+//       </h3>
 
-      <div className="bg-gray-50 p-6 rounded-xl space-y-4">
-        <h4 className="font-semibold text-lg">User Story: Login</h4>
+//       <div className="bg-gray-50 p-6 rounded-xl space-y-4">
+//         <h4 className="font-semibold text-lg">User Story: Login</h4>
 
-        <p className="text-gray-700">
-          <strong>As a</strong> customer or tailoring shop owner <br />
-          <strong>I want</strong> to log in to the system <br />
-          <strong>So that</strong> I can access personalized features and manage my orders.
-        </p>
+//         <p className="text-gray-700">
+//           <strong>As a</strong> customer or tailoring shop owner <br />
+//           <strong>I want</strong> to log in to the system <br />
+//           <strong>So that</strong> I can access personalized features and manage my orders.
+//         </p>
 
-        <div>
-          <h5 className="font-semibold mb-2">Acceptance Criteria</h5>
+//         <div>
+//           <h5 className="font-semibold mb-2">Acceptance Criteria</h5>
 
-          <ul className="list-disc pl-6 text-gray-700 space-y-2">
-            <li>
-              <strong>Scenario:</strong> Login with non-existing username <br />
-              <strong>Given:</strong> The user submits login credentials <br />
-              <strong>When:</strong> The username does not exist in the system <br />
-              <strong>Then:</strong> An error message is displayed indicating that the username is not found.
-            </li>
+//           <ul className="list-disc pl-6 text-gray-700 space-y-2">
+//             <li>
+//               <strong>Scenario:</strong> Login with non-existing username <br />
+//               <strong>Given:</strong> The user submits login credentials <br />
+//               <strong>When:</strong> The username does not exist in the system <br />
+//               <strong>Then:</strong> An error message is displayed indicating that the username is not found.
+//             </li>
 
-            <li>
-              <strong>Scenario:</strong> Login with incorrect password <br />
-              <strong>Given:</strong> The username exists <br />
-              <strong>When:</strong> The password does not match <br />
-              <strong>Then:</strong> An error message is displayed indicating an incorrect password.
-            </li>
+//             <li>
+//               <strong>Scenario:</strong> Login with incorrect password <br />
+//               <strong>Given:</strong> The username exists <br />
+//               <strong>When:</strong> The password does not match <br />
+//               <strong>Then:</strong> An error message is displayed indicating an incorrect password.
+//             </li>
 
-            <li>
-              <strong>Scenario:</strong> Successful login <br />
-              <strong>Given:</strong> Valid username and password <br />
-              <strong>When:</strong> The credentials are verified <br />
-              <strong>Then:</strong> The user is logged in, redirected to the home page,
-              and access/refresh tokens are stored securely in the browser.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
+//             <li>
+//               <strong>Scenario:</strong> Successful login <br />
+//               <strong>Given:</strong> Valid username and password <br />
+//               <strong>When:</strong> The credentials are verified <br />
+//               <strong>Then:</strong> The user is logged in, redirected to the home page,
+//               and access/refresh tokens are stored securely in the browser.
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 
 function TotalScoreRanking() {
